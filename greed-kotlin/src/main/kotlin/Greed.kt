@@ -30,8 +30,6 @@ class Greed {
             (input.distinct().size == 3 && input.all { input.occurrences(it) == 2 }) -> 800
             else -> input.distinct().map { it to input.occurrences(it) }.sumOf { (number, occurrences) ->
                 when {
-                    // first = the number
-                    // second = the occurrences of number
                     (number in setOf(1, 5) && occurrences < 3) -> occurrences * if (number == 1) 100 else 50
                     occurrences >= 3 -> (if (number == 1) 1000 else (number * 100)) * (1 shl (occurrences - 3))
                     else -> 0
