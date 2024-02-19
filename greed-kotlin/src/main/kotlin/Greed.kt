@@ -8,7 +8,7 @@ class Greed {
     companion object {
         private fun IntArray.occurrences(value: Int) = count { it == value }
         fun playGame(scoreGoal: Int, inputFunction: (play: Int) -> String): Int {
-            var currentPlayer = 0;
+            var currentPlayer = 0
             val scores = intArrayOf(0,0)
             var plays = 0
             while (true) {
@@ -25,7 +25,13 @@ class Greed {
             }
         }
 
+        /**
+         * Calculates score for given input.
+         * Based on the following rules: https://codingdojo.org/kata/Greed/
+         * @param input input array of integers. Should be of size 6
+         */
         fun score(input: IntArray) = when {
+            input.size != 6 -> throw IllegalStateException("Input array should have size of 6")
             (input.distinct().size == 6) -> 1200
             (input.distinct().size == 3 && input.all { input.occurrences(it) == 2 }) -> 800
             else -> input.distinct().map { it to input.occurrences(it) }.sumOf { (number, occurrences) ->
