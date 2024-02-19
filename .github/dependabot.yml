@@ -1,0 +1,27 @@
+version: 2
+updates:
+  # Maintain dependencies for learning-kotlin
+  - package-ecosystem: gradle
+    directory: "learning-kotlin"
+    schedule:
+      interval: "weekly"
+  # Maintain dependencies for bibliotheek-kotlin 
+  - package-ecosystem: gradle
+    directory: "bibliotheek-kotlin"
+    schedule:
+      interval: "weekly"
+  # Maintain dependencies for greed-kotlin
+  - package-ecosystem: gradle
+    directory: "greed-kotlin"
+    schedule:
+      interval: "weekly"
+  # Maintain dependencies for greed
+  - package-ecosystem: maven
+    directory: "greed"
+    schedule:
+      interval: "weekly"
+  # Maintain dependencies for github actions
+  #  - package-ecosystem: "github-actions"
+    #  directory: "/"
+    #schedule:
+      #  interval: "weekly"
